@@ -14,21 +14,25 @@ Currently tested on Ubuntu 10.04 ONLY.
 
 # ATTRIBUTES:
 
-	['redis']['bind']         # "127.0.0.1"
-	['redis']['port']         # "6379"
-	['redis']['config_path']  # "/etc/redis/redis.conf"
-	['redis']['daemonize']    # "no"
-	['redis']['timeout']      # "300"
-	['redis']['loglevel']     # "notice"
-	['redis']['password']     # nil
+	['redis']['bind']         		# "127.0.0.1"
+	['redis']['port']         		# "6379"
+	['redis']['config_path']  		# "/etc/redis/redis.conf"
+	['redis']['daemonize']    		# "no"
+	['redis']['timeout']      		# "300"
+	['redis']['loglevel']     		# "notice"
+	['redis']['password']     		# nil
+	['redis']['maxmemory']    		# nil
+	['redis']['appendfsync']  		# always
+	['redis']['maxmemory-policy']	# nil
 
-	['redis']['source']['version']          # "2.4.1"
+	['redis']['source']['version']          # "2.4.17"
 	['redis']['source']['prefix']           # "/usr/local"
-	['redis']['source']['tar_url']          # "http://redis.googlecode.com/files/redis-2.4.1.tar.gz"
+	['redis']['source']['tar_url']          # "http://redis.googlecode.com/files/redis-2.4.17.tar.gz"
 	['redis']['source']['tar_checksum']     # "38e02..."
 	['redis']['source']['create_service']   # true
 	['redis']['source']['user']             # "redis"
 	['redis']['source']['group']            # "redis"
+
 
 # USAGE:
 
