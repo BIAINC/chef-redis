@@ -126,6 +126,14 @@ requirepass <%= node['redis']['password'] %>
 #
 # maxmemory <bytes>
 
+<% if node['redis']['maxmemory'] %>
+maxmemory <%= node['redis']['maxmemory'] %>
+<% end %>
+
+<% if node['redis']['maxmemory-policy'] %>
+maxmemory-policy <%= node['redis']['maxmemory-policy'] %>
+<% end %>
+
 ############################## APPEND ONLY MODE ###############################
 
 # By default Redis asynchronously dumps the dataset on disk. If you can live
@@ -164,7 +172,8 @@ appendonly no
 # it want, for better performances (but if you can live with the idea of
 # some data loss consider the default persistence mode that's snapshotting).
 
-appendfsync always
+appendfsync <%= node['redis']['appendfsync'] %>
+
 # appendfsync everysec
 # appendfsync no
 
@@ -173,7 +182,7 @@ appendfsync always
 # Glue small output buffers together in order to send small replies in a
 # single TCP packet. Uses a bit more CPU but most of the times it is a win
 # in terms of number of queries per second. Use 'yes' if unsure.
-glueoutputbuf yes
+# glueoutputbuf yes
 
 # Use object sharing. Can save a lot of memory if you have many common
 # string in your dataset, but performs lookups against the shared objects
