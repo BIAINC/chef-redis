@@ -24,4 +24,4 @@ default['redis']['daemonize']    = "no"
 default['redis']['timeout']      = "300"
 default['redis']['loglevel']     = "notice"
 default['redis']['password']     = nil
-node['redis']['appendfsync']     = "always"
+default['redis']['appendfsync']  = "always"
